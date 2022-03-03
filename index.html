@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Nasa-Rover-Photo</title>
+  </head>
+  <body>
+    <!-- header -->
+    <h1>Nasa Rover Picture Viewer</h1>
+    <!-- Image and Page Navigator Section -->
+    <div class="flex-container">
+      <div class="image-container">
+        <img class="image" />
+
+        <button class="btn" id="prev" type="button">Prev</button>
+        <button class="btn" id="next" type="button">Next</button>
+        <button class="btn" id="reset" type="button">Reset</button>
+      </div>
+
+      <!-- Data and Submit Section -->
+      <div class="data-container">
+        <ul class="data-list">
+          <li id="data0">Page:</li>
+          <li id="data1">Camera:</li>
+          <li id="data2">Earth Date:</li>
+          <li id="data3">Object ID:</li>
+        </ul>
+        <div class="submit-container">
+          <label for="date">Please Selct Date:</label><br />
+          <input
+            type="date"
+            class="datein"
+            name="date"
+            id="date"
+            placeholder="dd-mm-yyyy"
+            value="2015-01-10"
+            min="2012-08-06"
+            max="2020-12-31"
+          />
+          <br />
+          <button class="btn" type="button" id="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

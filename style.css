@@ -1,0 +1,124 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+html {
+  font-size: 62.5%;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('Images/marsRover.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 3.5rem;
+  text-align: center;
+  color: #fff;
+}
+/* Main container section */
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  padding-top: 3em;
+  margin: auto;
+  background-color: #fff;
+  border: 1px solid black;
+}
+/* Image and page Navigator section mobile */
+.image-container {
+  display: block;
+  width: 85%;
+  max-width: 600px;
+  margin: auto;
+  z-index: 2;
+}
+
+.image {
+  display: block;
+  width: 100%;
+}
+
+.btn {
+  display: inline;
+  font-size: 2rem;
+  padding: 0.25em 0.5em;
+  border-radius: 100px;
+  background-color: aqua;
+}
+
+.btn:hover {
+  opacity: 0.5;
+}
+/* Data and submit section mobile */
+.data-container {
+  display: block;
+  width: 85%;
+  max-width: 500px;
+  margin: 3em auto;
+  padding-top: 3em;
+  background-color: dimgrey;
+  color: #fff;
+  border: 1px solid black;
+}
+
+.data-list {
+  display: block;
+  width: 80%;
+  /* border: 1px solid red; */
+  font-size: 2em;
+  text-align: left;
+  line-height: 25px;
+  margin: auto;
+}
+.submit-container {
+  display: block;
+  font-size: 2rem;
+  text-align: center;
+  margin: 2em auto;
+}
+
+.datein {
+  font-size: 2rem;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+/* Desktop Flex row */
+
+@media only screen and (min-width: 700px) {
+  .flex-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    max-width: 800px;
+    margin: 5em auto;
+    background-color: #fff;
+    border: 1px solid black;
+  }
+
+  .image-container,
+  .data-container {
+    flex-basis: 40%;
+  }
+
+  .image {
+    width: 100%;
+    transition: width 2s;
+  }
+
+  .image:hover {
+    width: 175%;
+    transition-delay: 1s;
+  }
+}
