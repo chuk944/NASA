@@ -23,6 +23,7 @@ h1 {
   font-size: 3.5rem;
   text-align: center;
   color: #fff;
+  margin:1em;
 }
 /* Main container section */
 .flex-container {
