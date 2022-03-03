@@ -14,7 +14,7 @@ document.getElementById('submit').addEventListener('click', loadFact);
 
 document.getElementById('next').addEventListener('click', function () {
   if (rover.index < rover.maxIndex) {
-    rover.index++;
+    rover.index++;   
     stats();
   }
 });
@@ -35,6 +35,7 @@ document.getElementById('reset').addEventListener('click', function () {
 //  it to rover object
 async function loadFact() {
   let newdate = document.getElementById('date').value;
+  rover.index = 0;
   let responce = await fetch(
     'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=' +
       newdate +
@@ -52,19 +53,25 @@ async function loadFact() {
 
 const stats = () => {
   let page = rover.index + 1;
+  let newImage = new Image();
+  const img = document.querySelector('img');
+  img.src = "Images/nasaloading.png";
   rover.maxIndex = rover.array.photos.length - 1;
 
   let result = rover.array.photos[rover.index].rover.name;
   let cameraLocation = rover.array.photos[rover.index].camera.full_name;
   let objectId = rover.array.photos[rover.index].id;
   let earthDate = rover.array.photos[rover.index].earth_date;
-  let image = rover.array.photos[rover.index].img_src;
+  newImage.src = rover.array.photos[rover.index].img_src;
+
+   
 
   rover.data0.innerHTML = 'Page: ' + page + ' of ' + (rover.maxIndex + 1);
   rover.data1.innerHTML = 'Camera: ' + cameraLocation;
   rover.data2.innerHTML = 'Earth Date: ' + earthDate;
   rover.data3.innerHTML = 'Object ID: ' + objectId;
 
-  const img = document.querySelector('img');
-  img.src = image;
+  newImage.onload = function() {
+  img.src = newImage.src;
+  }
 };
